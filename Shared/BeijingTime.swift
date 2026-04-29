@@ -5,27 +5,49 @@ enum BeijingTime {
     static let localeIdentifier = "zh_CN"
 
     static let timeZone: TimeZone = {
-        if let timeZone = TimeZone(identifier: timeZoneIdentifier) {
-            return timeZone
-        }
+        TimeZone(identifier: timeZoneIdentifier)
+            ?? TimeZone(secondsFromGMT: 8 * 60 * 60)
+            ?? .current
+    }()
 
-        return TimeZone(secondsFromGMT: 8 * 60 * 60) ?? .current
+    static let calendar: Calendar = {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = timeZone
+        cal.locale = Locale(identifier: localeIdentifier)
+        return cal
+    }()
+
+    private static let timeFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: localeIdentifier)
+        f.timeZone = timeZone
+        f.dateFormat = "HH:mm"
+        return f
+    }()
+
+    private static let dateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: localeIdentifier)
+        f.timeZone = timeZone
+        f.dateFormat = "yyyy年M月d日 EEEE"
+        return f
     }()
 
     static func timeString(from date: Date) -> String {
-        string(from: date, format: "HH:mm")
+        timeFormatter.string(from: date)
     }
 
     static func dateString(from date: Date) -> String {
-        string(from: date, format: "yyyy年M月d日 EEEE")
+        dateFormatter.string(from: date)
     }
 
+    // 本地时区随系统实时变化，不能缓存 formatter
     static func localTimeString(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: localeIdentifier)
-        formatter.timeZone = .current
-        formatter.dateFormat = "HH:mm"
-        return formatter.string(from: date)
+        let f = DateFormatter()
+        f.locale = Locale(identifier: localeIdentifier)
+        f.timeZone = .current
+        f.dateFormat = "HH:mm"
+        return f.string(from: date)
     }
 
     static func minuteStart(for date: Date) -> Date {
@@ -34,23 +56,8 @@ enum BeijingTime {
 
     static func timelineDates(from date: Date, minuteCount: Int) -> [Date] {
         let startDate = minuteStart(for: date)
-        return (0..<minuteCount).compactMap { minuteOffset in
-            calendar.date(byAdding: .minute, value: minuteOffset, to: startDate)
+        return (0..<minuteCount).compactMap { offset in
+            calendar.date(byAdding: .minute, value: offset, to: startDate)
         }
-    }
-
-    private static var calendar: Calendar {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = timeZone
-        calendar.locale = Locale(identifier: localeIdentifier)
-        return calendar
-    }
-
-    private static func string(from date: Date, format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: localeIdentifier)
-        formatter.timeZone = timeZone
-        formatter.dateFormat = format
-        return formatter.string(from: date)
     }
 }

@@ -18,6 +18,7 @@
 		A10000000000000000000009 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* SwiftUI.framework */; };
 		A1000000000000000000000A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* SwiftUI.framework */; };
 		A1000000000000000000000B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* WidgetKit.framework */; };
+		A1000000000000000000000C /* BeijingTimeClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000C /* BeijingTimeClock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A20000000000000000000008 /* TimeWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20000000000000000000009 /* BeijingTimeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BeijingTimeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000000000000000000000A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A2000000000000000000000C /* BeijingTimeClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeijingTimeClock.swift; sourceTree = "<group>"; };
 		A2000000000000000000000B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			children = (
 				A20000000000000000000001 /* main.swift */,
 				A20000000000000000000002 /* AppDelegate.swift */,
+				A2000000000000000000000C /* BeijingTimeClock.swift */,
 				A20000000000000000000003 /* TimeWidgetMenuView.swift */,
 			);
 			path = TimeWidget;
@@ -241,6 +244,7 @@
 			files = (
 				A10000000000000000000001 /* main.swift in Sources */,
 				A10000000000000000000002 /* AppDelegate.swift in Sources */,
+				A1000000000000000000000C /* BeijingTimeClock.swift in Sources */,
 				A10000000000000000000003 /* TimeWidgetMenuView.swift in Sources */,
 				A10000000000000000000004 /* BeijingTime.swift in Sources */,
 			);
