@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10000000000000000000001 /* TimeWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* TimeWidgetApp.swift */; };
-		A10000000000000000000002 /* MenuBarClockLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* MenuBarClockLabel.swift */; };
+		A10000000000000000000001 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* main.swift */; };
+		A10000000000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* AppDelegate.swift */; };
 		A10000000000000000000003 /* TimeWidgetMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* TimeWidgetMenuView.swift */; };
 		A10000000000000000000004 /* BeijingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* BeijingTime.swift */; };
 		A10000000000000000000005 /* BeijingTimeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* BeijingTimeWidgetBundle.swift */; };
@@ -45,8 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A20000000000000000000001 /* TimeWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWidgetApp.swift; sourceTree = "<group>"; };
-		A20000000000000000000002 /* MenuBarClockLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarClockLabel.swift; sourceTree = "<group>"; };
+		A20000000000000000000001 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20000000000000000000003 /* TimeWidgetMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWidgetMenuView.swift; sourceTree = "<group>"; };
 		A20000000000000000000004 /* BeijingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeijingTime.swift; sourceTree = "<group>"; };
 		A20000000000000000000005 /* BeijingTimeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeijingTimeWidgetBundle.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		A80000000000000000000002 /* TimeWidget */ = {
 			isa = PBXGroup;
 			children = (
-				A20000000000000000000001 /* TimeWidgetApp.swift */,
-				A20000000000000000000002 /* MenuBarClockLabel.swift */,
+				A20000000000000000000001 /* main.swift */,
+				A20000000000000000000002 /* AppDelegate.swift */,
 				A20000000000000000000003 /* TimeWidgetMenuView.swift */,
 			);
 			path = TimeWidget;
@@ -239,8 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10000000000000000000001 /* TimeWidgetApp.swift in Sources */,
-				A10000000000000000000002 /* MenuBarClockLabel.swift in Sources */,
+				A10000000000000000000001 /* main.swift in Sources */,
+				A10000000000000000000002 /* AppDelegate.swift in Sources */,
 				A10000000000000000000003 /* TimeWidgetMenuView.swift in Sources */,
 				A10000000000000000000004 /* BeijingTime.swift in Sources */,
 			);
@@ -445,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = BeijingTimeWidget/BeijingTimeWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = BeijingTimeWidget/BeijingTimeWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
